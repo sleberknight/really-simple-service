@@ -7,9 +7,7 @@ import com.acme.simple.resource.TemperatureResource;
 import com.acme.simple.util.JacksonHelpers;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Environment;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class App extends Application<AppConfiguration> {
 
     public static void main(String[] args) throws Exception {
