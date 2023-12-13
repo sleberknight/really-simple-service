@@ -141,7 +141,7 @@ public class TemperatureResource {
             var maybeCause = Optional.ofNullable(exception.getCause());
             var exceptionInfo = Map.of(
                     "type", exception.getClass().getName(),
-                    "message", exception.getMessage(),
+                    "message", Optional.ofNullable(exception.getMessage()).orElse(""),
                     "causeType", maybeCause.map(throwable -> throwable.getClass().getName()).orElse(""),
                     "causeMessage", maybeCause.map(Throwable::getMessage).orElse("")
             );
