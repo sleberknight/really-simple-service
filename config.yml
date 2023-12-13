@@ -3,6 +3,8 @@ appName: Really Simple!
 
 serializeTimestampsAsMillis: true
 
+disableJerseyFeatureAutoDiscovery: true
+
 logging:
   level: INFO
   loggers:

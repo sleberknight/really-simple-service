@@ -9,4 +9,5 @@ import lombok.Setter;
 public class AppConfiguration extends Configuration {
     private String appName;
     private boolean serializeTimestampsAsMillis;
+    private boolean disableJerseyFeatureAutoDiscovery;
 }
