@@ -57,10 +57,11 @@ public class SubmitReadingClient {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private static boolean readTimestampSerializationConfig() throws IOException {
         var configYaml = Files.readString(Path.of("config.yml"));
         var yaml = new Yaml();
         var config = yaml.loadAs(configYaml, Map.class);
-        return (Boolean) config.get("serializeTimestampsAsMillis");
+        return (Boolean) config.getOrDefault("serializeTimestampsAsMillis", true);
     }
 }
