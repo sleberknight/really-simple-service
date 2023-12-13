@@ -1,0 +1,11 @@
+---
+appName: Really Simple!
+
+serializeTimestampsAsMillis: true
+
+logging:
+  level: INFO
+  loggers:
+    com.acme: DEBUG
+  appenders:
+    - type: console

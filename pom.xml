@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.kiwiproject</groupId>
+        <artifactId>kiwi-parent</artifactId>
+        <version>3.0.6</version>
+    </parent>
+
+    <artifactId>really-simple-service</artifactId>
+    <version>0.5.0-SNAPSHOT</version>
+    <name>Really Simple Service</name>
+    <description>
+        Experimental code that might eventually move into kiwi, or just to try something out...
+    </description>
+
+    <properties>
+        <kiwi-bom.version>2.0.6</kiwi-bom.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.kiwiproject</groupId>
+                <artifactId>kiwi-bom</artifactId>
+                <version>${kiwi-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-core</artifactId>
+        </dependency>
+
+        <!--
+            The following dependency causes Jersey to use nanosecond timestamp resolution
+            via its auto-discovery mechanism in META-INF/services
+
+            Gitlab4J depends on this library directly, so by using it, we automatically
+            get this dependency which messes up Jersey. Gitlab4J's GitLabApiClient
+            has a constructor that sets FEATURE_AUTO_DISCOVERY_DISABLE to true, meaning
+            that for its own client the auto-discovery is disabled. But it seems that
+            for the Jersey server, the auto-discovery is still happening.
+         -->
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+    </build>
+
+</project>
