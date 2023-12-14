@@ -12,7 +12,7 @@ public class JacksonHelpers {
 
     public static void configureObjectMapper(ObjectMapper mapper, boolean serializeTimestampsAsMillis) {
         if (serializeTimestampsAsMillis) {
-            LOG.info("Configure application ObjectMapper with [READ|WRITE}_DATE_TIMESTAMPS_AS_NANOSECONDS=false");
+            LOG.warn("Configure application ObjectMapper with [READ|WRITE}_DATE_TIMESTAMPS_AS_NANOSECONDS=false");
             mapper.configure(DeserializationFeature.READ_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
             mapper.configure(SerializationFeature.WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS, false);
         } else {

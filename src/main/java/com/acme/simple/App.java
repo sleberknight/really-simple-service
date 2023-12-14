@@ -5,13 +5,10 @@ import com.acme.simple.config.AppConfiguration;
 import com.acme.simple.resource.SimpleResource;
 import com.acme.simple.resource.TemperatureResource;
 import com.acme.simple.util.JacksonHelpers;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.glassfish.jersey.CommonProperties;
-
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Environment;
+import lombok.extern.slf4j.Slf4j;
+import org.glassfish.jersey.CommonProperties;
 
 @Slf4j
 public class App extends Application<AppConfiguration> {
@@ -35,7 +32,7 @@ public class App extends Application<AppConfiguration> {
         jersey.register(new TemperatureResource(configuration));
 
         if (configuration.isDisableJerseyFeatureAutoDiscovery()) {
-            LOG.info("Disabling auto discovery globally in Jersey on client/server.");
+            LOG.warn("Disabling auto discovery globally in Jersey on client/server.");
             jersey.getResourceConfig().property(CommonProperties.FEATURE_AUTO_DISCOVERY_DISABLE, true);
         }
     }
