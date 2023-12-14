@@ -85,6 +85,8 @@ public class TemperatureResource {
     @POST
     @Path("/new")
     public Response newReading(@NotNull @Valid TemperatureReading newReading) {
+        LOG.info("Received new reading: {}", newReading);
+
         temperatureReadings.addFirst(newReading);
         var now = Instant.now();
         var entity = Map.of(
