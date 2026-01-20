@@ -19,7 +19,6 @@
 
     <properties>
         <kiwi-bom.version>3.0.1</kiwi-bom.version>
-
     </properties>
 
     <dependencyManagement>
@@ -35,6 +34,12 @@
     </dependencyManagement>
 
     <dependencies>
+
+         <dependency>
+             <groupId>org.checkerframework</groupId>
+             <artifactId>checker-qual</artifactId>
+             <scope>compile</scope>
+         </dependency>
 
         <dependency>
             <groupId>io.dropwizard</groupId>
