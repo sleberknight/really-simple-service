@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.kiwiproject</groupId>
         <artifactId>kiwi-parent</artifactId>
-        <version>3.0.45</version>
+        <version>3.0.46</version>
     </parent>
 
     <artifactId>really-simple-service</artifactId>
@@ -18,7 +18,7 @@
     </description>
 
     <properties>
-        <kiwi-bom.version>3.3.5</kiwi-bom.version>
+        <kiwi-bom.version>3.3.6</kiwi-bom.version>
     </properties>
 
     <dependencyManagement>
